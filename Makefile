@@ -2,6 +2,7 @@ VERSION?=$(shell cat VERSION)
 IMAGE_TAG?=v$(VERSION)
 IMAGE_PREFIX?=argoprojlabs
 DOCKER_PUSH?=false
+CURRENT_DIR=$(shell pwd)
 
 .PHONY: test
 test:
@@ -16,6 +17,10 @@ docs:
 	rm -rf vendor && go mod vendor && mkdir -p docs/services
 	cp -r vendor/github.com/argoproj/notifications-engine/docs/services/* docs/services && rm docs/services/*.go && rm -rf vendor
 	go run github.com/argoproj-labs/argocd-notifications/hack/gen docs
+
+.PHONY: serve-docs
+serve-docs: docs ## serve docs locally
+	docker run --rm -it -p 8000:8000 -v ${CURRENT_DIR}:/docs squidfunk/mkdocs-material serve -a 0.0.0.0:8000
 
 .PHONY: catalog
 catalog:

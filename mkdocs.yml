@@ -1,9 +1,9 @@
+extra:
+  analytics:
+    property: UA-105170809-5
+    provider: google
 site_name: Argo CD Notifications
 repo_url: https://github.com/argoproj-labs/argocd-notifications
-strict: true
-google_analytics:
-- 'UA-105170809-5'
-- 'auto'
 theme:
   name: material
   palette:
@@ -20,8 +20,6 @@ markdown_extensions:
 - admonition
 - pymdownx.highlight
 - pymdownx.superfences
-- markdown_include.include:
-    base_path: docs
 - toc:
     permalink: true
 nav:
