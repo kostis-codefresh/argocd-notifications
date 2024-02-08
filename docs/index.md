@@ -3,7 +3,6 @@
 !!! important "This page has moved"
     Warning. Argo notifications has been merged with the Argo CD project. You do not need to install it separately anymore. It is now part of the main Argo CD installation See https://argo-cd.readthedocs.io/en/stable/operator-manual/notifications/ for latest docs. 
 
-
 # Overview
 
 Argo CD Notifications continuously monitors Argo CD applications and provides a flexible way to notify
